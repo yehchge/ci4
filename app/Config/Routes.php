@@ -34,10 +34,18 @@ $routes->get('/', 'Home::index');
 $routes->get('pagination', 'PaginationController::index');
 $routes->get('loadRecord', 'PaginationController::loadRecord');
 
+// CodeIgniter 4 Version Page
+$routes->get('welcome', 'Welcome::index');
+
+// CodeIgniter 3 Version Page
+$routes->get('welcome/old', 'Welcome::old');
+
 // Static Pages
 use App\Controllers\Pages;
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
+
+
 
 /*
  * --------------------------------------------------------------------
