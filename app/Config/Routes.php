@@ -31,6 +31,14 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->get('pagination', 'PaginationController::index');
+$routes->get('loadRecord', 'PaginationController::loadRecord');
+
+// Static Pages
+use App\Controllers\Pages;
+$routes->get('pages', [Pages::class, 'index']);
+$routes->get('(:segment)', [Pages::class, 'view']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
