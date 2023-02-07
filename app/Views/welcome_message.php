@@ -239,6 +239,9 @@
             <li class="menu-item hidden">
                 <a href="./pgusers">Pagination User</a>
             </li>
+            <li class="menu-item hidden">
+                <a href="./codestar">Custom Pagination</a>
+            </li>
         </ul>
     </div>
 

@@ -51,6 +51,8 @@ $routes->get('maintenance', 'Maintenance::index');
 $routes->get('pgusers/(:segment)', 'PgUserController::getAll');
 $routes->get('pgusers', 'PgUserController::getAll');
 
+// Custom Pagination
+$routes->get('codestar', 'Main::index');
 
 // Static Pages
 use App\Controllers\Pages;
