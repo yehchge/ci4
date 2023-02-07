@@ -54,6 +54,11 @@ $routes->get('pgusers', 'PgUserController::getAll');
 // Custom Pagination
 $routes->get('codestar', 'Main::index');
 
+// Offical News Sample
+$routes->match(['get', 'post'], 'news/create', 'News::create');
+$routes->get('news/(:segment)', 'News::view/$1');
+$routes->get('news', 'News::index');
+
 // Static Pages
 use App\Controllers\Pages;
 $routes->get('pages', [Pages::class, 'index']);
