@@ -13,3 +13,37 @@
  *
  * @see: https://codeigniter4.github.io/CodeIgniter4/
  */
+
+
+// for smarty
+// require_once ROOTPATH . "vendor/sarah-systems/ci4smarty/src/Common.php";
+namespace CI4Smarty;
+
+// use CI4Smarty\Config\Services;
+use Config\Services;
+use Exception;
+
+
+/**
+ * @param string $name
+ * @param mixed $data
+ * @param array $options Unused - reserved for third-party extensions.
+ *
+ * @return string
+ * @throws Exception
+ */
+function view(string $name, $data = [], array $options = []): string
+{
+    try {
+        $ext = $_ENV['CI4Smarty.DefaultTemplateExtension'] ?? '.tpl';
+        $smarty = Services::smarty();
+        unset($options); // 互換性のため維持。不要なのでunset
+        if (substr($name, 0, -strlen($ext)) != $ext) {
+            $name .= $ext;
+        }
+        $smarty->assign('CI', $data);
+    } catch (Exception $e) {
+        throw $e;
+    }
+    return $smarty->fetch($name);
+}
