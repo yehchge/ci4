@@ -40,6 +40,9 @@ $routes->get('welcome', 'Welcome::index');
 // CodeIgniter 3 Version Page
 $routes->get('welcome/old', 'Welcome::old');
 
+// Smarty sample
+$routes->get('smarty', "Smarty::index");
+
 // Static Pages
 use App\Controllers\Pages;
 $routes->get('pages', [Pages::class, 'index']);

@@ -230,6 +230,9 @@
             <li class="menu-item hidden">
                 <a href="./pagination">Pagination</a>
             </li>
+            <li class="menu-item hidden">
+                <a href="./smarty">Smarty</a>
+            </li>
         </ul>
     </div>
 

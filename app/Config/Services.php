@@ -3,6 +3,7 @@
 namespace Config;
 
 use CodeIgniter\Config\BaseService;
+use App\ThirdParty\CI4Smarty;
 
 /**
  * Services Configuration file.
@@ -29,4 +30,12 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
+    
+    public static function smarty($getShared = true)
+    {
+        if ($getShared) {
+            return static::getSharedInstance('smarty');
+        }
+        return new CI4Smarty();
+    }
 }
