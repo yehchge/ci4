@@ -31,6 +31,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+// Pagination sample
 $routes->get('pagination', 'PaginationController::index');
 $routes->get('loadRecord', 'PaginationController::loadRecord');
 
@@ -46,6 +47,9 @@ $routes->get('smarty', "Smarty::index");
 // maintenance Page
 $routes->get('maintenance', 'Maintenance::index');
 
+// Pagination example
+$routes->get('pgusers/(:segment)', 'PgUserController::getAll');
+$routes->get('pgusers', 'PgUserController::getAll');
 
 
 // Static Pages

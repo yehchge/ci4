@@ -236,6 +236,9 @@
             <li class="menu-item hidden">
                 <a href="./maintenance">Maintenance</a>
             </li>
+            <li class="menu-item hidden">
+                <a href="./pgusers">Pagination User</a>
+            </li>
         </ul>
     </div>
 
