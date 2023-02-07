@@ -43,6 +43,11 @@ $routes->get('welcome/old', 'Welcome::old');
 // Smarty sample
 $routes->get('smarty', "Smarty::index");
 
+// maintenance Page
+$routes->get('maintenance', 'Maintenance::index');
+
+
+
 // Static Pages
 use App\Controllers\Pages;
 $routes->get('pages', [Pages::class, 'index']);

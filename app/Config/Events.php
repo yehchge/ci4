@@ -5,6 +5,9 @@ namespace Config;
 use CodeIgniter\Events\Events;
 use CodeIgniter\Exceptions\FrameworkException;
 
+// 維護頁
+use App\Libraries\Maintenance;
+
 /*
  * --------------------------------------------------------------------
  * Application Events
@@ -46,3 +49,7 @@ Events::on('pre_system', static function () {
         Services::toolbar()->respond();
     }
 });
+
+// 維護
+$Maintenance = new Maintenance();
+Events::on('pre_system', [$Maintenance, 'offline_check'], Events::PRIORITY_HIGH);
