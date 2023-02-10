@@ -248,6 +248,9 @@
             <li class="menu-item hidden">
                 <a href="./news/create">AddNews</a>
             </li>
+            <li class="menu-item hidden">
+                <a href="./upload">Upload</a>
+            </li>
         </ul>
     </div>
 
