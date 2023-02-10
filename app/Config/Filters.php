@@ -31,11 +31,13 @@ class Filters extends BaseConfig
         'before' => [
             // 'honeypot',
             // 'csrf',
-            // 'csrf' => [
-            //     'except' => [
-            //         '/maintenance'
-            //     ]
-            // ],
+            'csrf' => [
+                'except' => [
+                    '/maintenance',
+                    '/employee',
+                    '/employee/*',
+                ],
+            ],
             // 'invalidchars',
         ],
         'after' => [
