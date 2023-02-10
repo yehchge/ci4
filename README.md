@@ -71,3 +71,8 @@ Step8. Set .env variable CI_ENVIRONMENT
 To
 CI_ENVIRONMENT = development
 ```
+
+# Install JWT Package
+```bash
+composer require firebase/php-jwt
+```
