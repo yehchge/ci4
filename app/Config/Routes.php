@@ -54,6 +54,10 @@ $routes->get('pgusers', 'PgUserController::getAll');
 // Custom Pagination
 $routes->get('codestar', 'Main::index');
 
+# upload file sample
+$routes->get('upload', 'Upload::index');          // Add this line.
+$routes->post('upload/upload', 'Upload::upload'); // Add this line.
+
 // Offical News Sample
 $routes->match(['get', 'post'], 'news/create', 'News::create');
 $routes->get('news/(:segment)', 'News::view/$1');
