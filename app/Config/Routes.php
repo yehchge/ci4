@@ -79,6 +79,15 @@ use App\Controllers\Pages;
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 
+
+$routes->cli('tools/test', 'Tools::test');
+$routes->cli('tools/test_password', 'Tools::test_password');
+$routes->cli('tools/hello/(:segment)', 'Tools::hello/$1');
+$routes->cli('tools/hello', 'Tools::index/$1');
+$routes->cli('tools/index', 'Tools::index');
+$routes->cli('tools', 'Tools::index');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
