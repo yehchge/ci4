@@ -21,6 +21,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'authFilter'    => \App\Filters\ApiAuthFilter::class,
     ];
 
     /**
@@ -33,6 +34,8 @@ class Filters extends BaseConfig
             // 'csrf',
             'csrf' => [
                 'except' => [
+                    'api',
+                    'api/*',
                     '/maintenance',
                     '/employee',
                     '/employee/*',

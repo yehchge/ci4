@@ -76,3 +76,51 @@ CI_ENVIRONMENT = development
 ```bash
 composer require firebase/php-jwt
 ```
+
+# Add JWT Model
+```bash
+php spark make:model ApiUserModel
+```
+
+# Add JWT Migration
+```bash
+php spark make:migration ApiAddUser
+```
+
+# Run JWT Migration
+```bash
+php spark migrate
+```
+
+# Add JWT_SECRET on .env file
+```txt
+#----------------------------------------------------------------
+# JWT
+#----------------------------------------------------------------
+JWT_SECRET = 'CodeIgniter4 JSON Web Token (JWT) Authentication'
+```
+
+# Create Controllers
+```bash
+php spark make:controller ApiLogin
+php spark make:controller ApiRegister
+php spark make:controller ApiUser
+```
+
+# Create Controller Filter
+```bash
+php spark make:filter ApiAuthFilter
+```
+
+# Add ApiAuthFilter to Filters.php
+
+# Register Routes
+```php
+// JWT API
+$routes->group("api", function($routes){
+    $routes->post('register', 'ApiRegister::index');
+    $routes->post('login', 'ApiLogin::index');
+    $routes->get('users', 'ApiUser::index', ['filter' => 'authFilter']);
+});
+```
+

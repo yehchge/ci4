@@ -67,7 +67,12 @@ $routes->get('news', 'News::index');
 // RESTful API
 $routes->resource('employee');
 
-
+// JWT API
+$routes->group("api", function($routes){
+    $routes->post('register', 'ApiRegister::index');
+    $routes->post('login', 'ApiLogin::index');
+    $routes->get('users', 'ApiUser::index', ['filter' => 'authFilter']);
+});
 
 // Static Pages
 use App\Controllers\Pages;
