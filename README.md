@@ -124,3 +124,14 @@ $routes->group("api", function($routes){
 });
 ```
 
+## 觀看 CodeIgniter 核心版本(Version 4.x.x)
+
+```bash
+php spark app:info
+```
+
+## 觀看 CodeIgniter 核心版本(Version 3.x.x)
+
+```bash
+cat system/core/CodeIgniter.php | grep CI_VERSION
+```
