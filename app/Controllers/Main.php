@@ -24,6 +24,8 @@ class Main extends BaseController
         $data['total'] = $model->countAll();
         $data['data'] = $model->paginate($data['perPage']);
         $data['pager'] = $model->pager;
+        
+// echo "<pre>";print_r($data);echo "</pre>";exit;
 
         return view('layouts/home', $data);
     }

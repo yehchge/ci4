@@ -9,7 +9,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-use APP\Model\NewsModel;
+use App\Models\NewsModel;
 
 class News extends BaseController
 {
@@ -49,7 +49,7 @@ class News extends BaseController
     {
         $model = model(NewsModel::class);
 
-        if ($this->request->getMethod() === 'post' && $this->validate([
+        if ($this->request->getMethod() === 'POST' && $this->validate([
             'title' => 'required|min_length[3]|max_length[255]',
             'body' => 'required',
         ])) {
