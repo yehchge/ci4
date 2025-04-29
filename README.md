@@ -15,6 +15,8 @@ Step1. Copy ~/public/* to ~/
 Copy index.php、.htaccess、favicon.ico、robot.txt to project root directory.
 
 Step2. Change in ~/app/Config/App.php File
+  
+PS: Change the $baseURL, can show Debug Toolbar.
 
 ```txt
 public $baseURL = 'http://localhost:8080/';
